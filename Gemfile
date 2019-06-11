@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
 group :development, :test do
   gem 'pry'
   # RSpec Gem - Test Suite Runner

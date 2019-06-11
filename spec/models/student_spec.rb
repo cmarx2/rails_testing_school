@@ -3,8 +3,7 @@ require 'rails_helper'
 RSpec.describe Student, type: :model do
   before(:each) do
     @student = FactoryBot.create
-    @school = FactoryBot.create
-  end
+    end
 
   describe 'attributes' do
     it {should respond_to :name}

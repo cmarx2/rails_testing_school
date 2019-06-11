@@ -1,21 +1,45 @@
 class SchoolsController < ApplicationController
+  before_action :set_school, only: [:show, :edit, :update, :destroy]
 
-  # GET /schools
+  def index
+    @schools = School.all
+  end
 
-  # GET /schools/1
 
-  # GET /schools/new
+  def show
+  end
 
-  # GET /schools/edit
+  def new
+    @school = School.new
+  end
 
-  # POST /schools
+  def edit
+  end
 
-  # DELETE /schools
+
+  def create
+    @school = School.new(school_params)
+
+    if @school.save
+      redirect_to @school, notice: 'School is created'
+    else
+      render :new
+    end
+  end
+ 
+
+  def destroy
+    @school.destroy
+    redirect_to root_path    
+  end
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
+   def set_school
+    @school = School.find(params[:id])
+    end
 
-    # Only allow a trusted parameter "white list" through.
-
+  def school_params
+    params.required(:school).permit(:name, :address, :principal, :capacity, :private_school)
+  end
 end

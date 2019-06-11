@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :robot, class: School do
+  factory :school, class: School do
     name { "DPL" }
     address { "123 Main Street" }
     principal { "Harry Winston"}

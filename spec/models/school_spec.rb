@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe School, type: :model do
-  
+
+  describe "class methods" do
+    before(:each) do
+      @school1 = FactoryBot.create(:school)
+   
   describe 'attributes' do
     it 'has a name' do
       name = 'BurgerU'
