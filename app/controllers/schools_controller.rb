@@ -26,11 +26,19 @@ class SchoolsController < ApplicationController
       render :new
     end
   end
+
+  def update
+   if @school.update(school_params)
+    redirect_to @school, notice: "School is updated"
+   else 
+    render :edit
+   end
+  end
  
 
   def destroy
     @school.destroy
-    redirect_to root_path    
+    redirect_to @school    
   end
 
   private
